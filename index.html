@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aigle Service - Partenariat Restaurant</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #ff6b00, #ff0000);
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header span {
+    display: block;
+    margin-top: 10px;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    width: 300px;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #334155;
+}
+
+.card h3 {
+    text-align: center;
+}
+
+.price {
+    font-size: 1.6em;
+    color: #ff6b00;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    background: #ff6b00;
+    border: none;
+    padding: 12px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: red;
+}
+
+.highlight {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #020617;
+    font-size: 14px;
+}
+
+.notice {
+    margin-top: 15px;
+    color: #facc15;
+    font-weight: bold;
+}
+
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>🦅 AIGLE SERVICE</h1>
+    <span>Partenaire de croissance pour restaurants</span>
+    <p>Vous cuisinez, nous trouvons les clients et livrons 🚀</p>
+</header>
+
+<section class="fade">
+    <h2>🎯 Pourquoi travailler avec nous ?</h2>
+    <p>Augmentez vos ventes sans recruter et sans stress.</p>
+</section>
+
+<section class="fade">
+    <h2>💰 Nos Offres</h2>
+
+    <div class="card-container">
+
+        <!-- ACCESS -->
+        <div class="card">
+            <h3>🟢 ACCESS</h3>
+            <p class="price">50 000 FCFA / mois</p>
+            <ul>
+                <li>✔ Création de vos pages professionnelles</li>
+                <li>✔ 12 à 15 publications / mois</li>
+                <li>✔ Mise en avant de vos plats</li>
+                <li>✔ Réception des commandes WhatsApp</li>
+                <li>✔ Réponse aux clients</li>
+                <li class="highlight">+ Attirer vos premiers clients</li>
+            </ul>
+            <button onclick="commander('ACCESS','50 000 FCFA / mois','Création pages + publications + gestion commandes')">
+                Commencer
+            </button>
+        </div>
+
+        <!-- BUSINESS -->
+        <div class="card">
+            <h3>🔵 BUSINESS</h3>
+            <p class="price">80 000 FCFA / mois</p>
+            <ul>
+                <li>✔ Gestion complète des réseaux sociaux</li>
+                <li>✔ 15 publications / mois</li>
+                <li>✔ 2 à 3 vidéos</li>
+                <li>✔ Création de flyers</li>
+                <li>✔ Gestion des clients</li>
+                <li class="highlight">+ Augmentation de vos ventes</li>
+            </ul>
+            <button onclick="commander('BUSINESS','80 000 FCFA / mois','Réseaux sociaux + vidéos + flyers + gestion clients')">
+                Choisir
+            </button>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="card">
+            <h3>🔴 PREMIUM</h3>
+            <p class="price">Sur mesure + commission</p>
+            <ul>
+                <li>✔ Gestion totale</li>
+                <li>✔ 4 à 6 vidéos professionnelles</li>
+                <li>✔ Marketing avancé</li>
+                <li>✔ Gestion complète des clients</li>
+                <li>✔ Livraison intégrée 🛵</li>
+                <li>✔ Publicités sponsorisées</li>
+                <li class="highlight">+ Croissance rapide</li>
+            </ul>
+            <button onclick="commander('PREMIUM','Sur mesure','Gestion complète + livraison + publicité')">
+                Devenir partenaire
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section class="fade">
+    <h2>🔥 Vos avantages</h2>
+    <p>
+        ✔ Plus de clients <br>
+        ✔ Plus de commandes <br>
+        ✔ Gain de temps <br>
+        ✔ Image professionnelle 🚀
+    </p>
+</section>
+
+<footer>
+    <p><strong>📍 Localisation :</strong> Quartier Sodepra, Korhogo</p>
+    <p><strong>📞 Contact :</strong> 0101010756</p>
+
+    <p class="notice">
+        🚧 Le site officiel de Aigle Service sera bientôt disponible pour vos courses, ventes et achats en ligne.
+    </p>
+</footer>
+
+<script>
+// Animation
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+});
+
+// WhatsApp intelligent
+function commander(pack, prix, details) {
+
+    let message = `Bonjour Aigle Service 👋
+
+Je suis intéressé par votre offre :
+
+📦 Pack : ${pack}
+💰 Prix : ${prix}
+📋 Détails : ${details}
+
+Je souhaite démarrer un partenariat avec vous.`;
+
+    let url = "https://wa.me/message/GDLBZQ352AW7H1?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
